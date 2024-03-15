@@ -1,5 +1,5 @@
-let tOrigin = [6, 8, 9, 11, -2, 5, -10];
-let t= tOrigin.slice();
+let tOrigin = [-511, 1233, 54, -7, 6, 8, 9, 11, -2, 5, -10];
+let t = tOrigin.slice();
 
 function callQuick (arr, i, j){
     let iOrigin=i;
@@ -30,7 +30,7 @@ function quickSort (arr){
     let i=0;
     let j=arr.length-1;
     callQuick (arr, i, j)
-    return arr
+    //return arr
 }
 
 //Copied function to help with design interface
@@ -39,12 +39,13 @@ function quickSort (arr){
 function displayMessage(){
     let theElem = document.getElementById("elem").value;
     if (theElem){
-        document.getElementById("showinputhere").innerHTML = "A hozzáadott elem: " + theElem;
+        document.getElementById("showInputHere").innerHTML = "Az utoljára hozzáadott elem: " + theElem;
+        t.push(theElem);
         tOrigin.push(theElem);
-        t.push(theElem);  
+         
     }
     else{
-        document.getElementById("showinputhere").innerHTML = "Számot kell beírni, ami a tömb legutolsó eleme lesz.";
+        document.getElementById("showInputHere").innerHTML = "Számot kell beírni, ami a tömb legutolsó eleme lesz.";
     }
     document.getElementById("elem").value="";
 }
@@ -59,6 +60,7 @@ function displayArray(){
 function deleteArray(){
     t=[];
     tOrigin=[];
+    document.getElementById("showInputHere").innerHTML = "Minden törölve lett.";
 }
 
 function sortArray(){
