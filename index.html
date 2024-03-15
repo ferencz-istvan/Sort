@@ -14,24 +14,28 @@
     
     
     <label>Tömb következő elemének megadása:</label>
-    <!--<form>-->
+
     <input type="number" id="elem" placeholder="elem hozzáadása"><br>
-    <!--</form>-->
     <div class="buttonContainer">
         <button id ="myBtn" onclick="displayMessage(),displayArray(),sortArray()">Elem beolvasása</button>
         <button onclick="displayArray(),sortArray()">Tömb kiírása</button>
-        <!--<button onclick="displayArray(), sortArray()">Tömb rendezése</button>-->
         <button onclick="deleteArray(),displayArray(), sortArray()">Tömb ürítése</button>
     </div>
     
   
-  
   <p id="showinputhere"></p>
-  
- 
-    
-    <p id="showArray"></p>
-    <p id="showSortedArray"></p>
+  <p id="showArray"></p>
+  <p id="showSortedArray"></p>
+
+<script>
+    let input = document.getElementById("elem");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+</script>
 
 </body>
 </html>

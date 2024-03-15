@@ -5,8 +5,6 @@ function callQuick (arr, i, j){
     let iOrigin=i;
     let jOrigin=j;
     while (i!=j) {
-        //console.log(arr);
-        //console.log('i: '+ i + ' j: '+ j);
         if ((arr[i]-arr[j])/(i-j)<0){
             //the if condition is differential function in math, iff negative, the elements are in wrong position
             i=j+i;
@@ -40,7 +38,6 @@ function quickSort (arr){
 
 function displayMessage(){
     let theElem = document.getElementById("elem").value;
-    //let containerArray=containerArray.push( document.getElementById("elem").value) ;
     if (theElem){
         document.getElementById("showinputhere").innerHTML = "A hozzáadott elem: " + theElem;
         tOrigin.push(theElem);
@@ -49,6 +46,7 @@ function displayMessage(){
     else{
         document.getElementById("showinputhere").innerHTML = "Számot kell beírni, ami a tömb legutolsó eleme lesz.";
     }
+    document.getElementById("elem").value="";
 }
 function displayArray(){
     if (tOrigin.length!=0){
@@ -71,13 +69,3 @@ function sortArray(){
         document.getElementById("showSortedArray").innerHTML = ("A rendezett tömb üres!!!");   
     }
 }
-
-
-let input = document.getElementById("elem");
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.getElementById("myBtn").click();
-  }
-});
-
