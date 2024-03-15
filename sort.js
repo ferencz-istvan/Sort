@@ -71,3 +71,13 @@ function sortArray(){
         document.getElementById("showSortedArray").innerHTML = ("A rendezett tömb üres!!!");   
     }
 }
+
+
+let input = document.getElementById("elem");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+
