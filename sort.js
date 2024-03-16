@@ -1,5 +1,4 @@
-let tOrigin = [-511, 1233, 54, -7, 6, 8, 9, 11, -2, 5, -10];
-let t = tOrigin.slice();
+let tOrigin = [6, 8, 9, 5, -2 , -11, 7];
 
 function callQuick (arr, i, j){
     let iOrigin=i;
@@ -27,10 +26,13 @@ function callQuick (arr, i, j){
 }
 
 function quickSort (arr){
+    let t = arr.slice();
+    //let t = arr.map((x) => x===Math.floor(x) ? x : x.toFixed(2));
+    console.log(t);
     let i=0;
     let j=arr.length-1;
-    callQuick (arr, i, j)
-    //return arr
+    callQuick (t, i, j)
+    return t
 }
 
 //Copied function to help with design interface
@@ -40,9 +42,7 @@ function displayMessage(){
     let theElem = document.getElementById("elem").value;
     if (theElem){
         document.getElementById("showInputHere").innerHTML = "Az utoljára hozzáadott elem: " + theElem;
-        t.push(theElem);
-        tOrigin.push(theElem);
-         
+        tOrigin.push(parseFloat(theElem));
     }
     else{
         document.getElementById("showInputHere").innerHTML = "Számot kell beírni, ami a tömb legutolsó eleme lesz.";
@@ -58,15 +58,13 @@ function displayArray(){
 }
 
 function deleteArray(){
-    t=[];
     tOrigin=[];
     document.getElementById("showInputHere").innerHTML = "Minden törölve lett.";
 }
 
 function sortArray(){
-    quickSort(t);
     if (tOrigin.length!=0){
-        document.getElementById("showSortedArray").innerHTML = ("A rendezett tömb: " + t);
+        document.getElementById("showSortedArray").innerHTML = ("A rendezett tömb: " + quickSort(tOrigin));
     } else {
         document.getElementById("showSortedArray").innerHTML = ("A rendezett tömb üres!!!");   
     }
