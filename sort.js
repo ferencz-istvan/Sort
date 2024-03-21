@@ -20,8 +20,8 @@ function callQuick (arr, i, j){
         }
     }
     if (iOrigin<jOrigin) {
-        if ((i-1)>0) {callQuick(arr, 0, i-1)};
-        if ((i+1)<jOrigin) {callQuick(arr, i+1, jOrigin)};
+        if (i >iOrigin) {callQuick(arr, iOrigin, i-1)};
+        if (i <jOrigin) {callQuick(arr, i+1, jOrigin)};
     }  
 }
 
